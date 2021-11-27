@@ -4,9 +4,6 @@ import '../assets/Profil.css';
 const ProfilPage = () => {
   return (
     <div class="background">
-      <div>
-        <button  class="modifButton" type="button"> Accueil </button>
-      </div>
       <div class="flex-parent jc-center">
         <form class="form" action="" method="get">
           <div class="divSpacing">
