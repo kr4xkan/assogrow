@@ -2,8 +2,11 @@ const express = require('express');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 
+const JWT = require('jsonwebtoken');
+
 const config = require('../config');
 const Partenaire = require('../models/Partenaire');
+const User = require('../models/User');
 
 router.get('/all', async(req, res) => {
     const errors = validationResult(req);
@@ -27,17 +30,17 @@ router.post('/add', [
     }
     const _name = req.body.name;
     const _contact = req.body.contact;
-    fetchUserByToken(req).then(async(doc) => {
-            let data = {
-                asso: doc._id,
-                name: _name,
-                contact: _contact
-            };
-            let newPartenaire = new Partenaire(data);
-            await newPartenaire.save();
-            return res.status(200);
-        })
-        .catch(err => res.status(401).json({ err }));
+    fetchUserByToken(req).then(async (doc) => {
+        let data = {
+            asso: doc._id,
+            name: _name,
+            contact: _contact
+        };
+        let newPartenaire = new Partenaire(data);
+        await newPartenaire.save();
+        return res.status(200).send();
+    })
+    .catch(err => res.status(401).json({ err }));
 });
 
 router.put('/:id', [
