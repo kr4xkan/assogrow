@@ -12,13 +12,13 @@
     position: relative;
 }
 
-.header > svg {
+.header>svg {
     position: absolute;
     bottom: 0;
     z-index: -1;
 }
 
-.header > .bang {
+.header>.bang {
     font-size: 48px;
     font-weight: bolder;
     width: 60%;
@@ -26,7 +26,7 @@
     margin-bottom: 64px;
 }
 
-.header > .inputcontainer {
+.header>.inputcontainer {
     border: none;
     font-weight: bold;
     padding: 16px;
@@ -37,7 +37,7 @@
     transition: all .2s;
 }
 
-.header > .inputcontainer > input {
+.header>.inputcontainer>.autocomplete>input {
     border: none;
     font-weight: bold;
     padding: 16px 24px;
@@ -48,7 +48,7 @@
     transition: all .2s;
 }
 
-.header > .inputcontainer > button {
+.header>.inputcontainer>.autocomplete>button {
     display: inline-block;
     border: none;
     font-weight: bold;
@@ -60,12 +60,12 @@
     transition: all .2s;
 }
 
-.header > .inputcontainer > button:hover {
+.header>.inputcontainer>.autocomplete>button:hover {
     background-color: white;
     color: rgb(151, 220, 138);
 }
 
-.header > .login {
+.header>.login {
     position: absolute;
     font-weight: bold;
     top: 32px;
@@ -78,7 +78,7 @@
     transition: all .2s;
 }
 
-.header > .login:hover {
+.header>.login:hover {
     background-color: black;
     color: #eee;
     cursor: pointer;
@@ -93,16 +93,18 @@
     justify-content: center;
 }
 
-.content > div {
+.content>div {
     padding: 16px;
     background-color: #fff;
     box-shadow: 0 4px 10px 0 #6c6c6ca7;
     border-radius: 16px;
     margin-bottom: 128px;
 }
-.content > div:nth-child(2n) {
+
+.content>div:nth-child(2n) {
     margin-left: 10%;
 }
-.content > div:nth-child(2n+1) {
+
+.content>div:nth-child(2n+1) {
     margin-right: 10%;
 }

@@ -1,0 +1,1065 @@
+[{
+        "0": "lait",
+        "1": "Laitier",
+        "2": "ETE",
+        "3": "Haute-Marne",
+        "": 1
+    },
+    {
+        "0": "beurre",
+        "1": "Laitier",
+        "2": "ANUELLE",
+        "3": "Landes",
+        "": 2
+    },
+    {
+        "0": "Abbaye de la Pierre-qui-Vire",
+        "1": "Laitier",
+        "2": "HIVER",
+        "3": "Gard",
+        "": 3
+    },
+    {
+        "0": "Molle à croûte lavée",
+        "1": "Laitier",
+        "2": "ETE",
+        "3": "Orne",
+        "": 4
+    },
+    {
+        "0": "Abondance",
+        "1": "Laitier",
+        "2": "AUTOMNE",
+        "3": "Lot-et-Garonne",
+        "": 5
+    },
+    {
+        "0": "Pressée cuite",
+        "1": "Laitier",
+        "2": "AUTOMNE",
+        "3": "Territoire-de-Belfort",
+        "": 6
+    },
+    {
+        "0": "Angors",
+        "1": "Laitier",
+        "2": "ETE",
+        "3": "Hérault",
+        "": 7
+    },
+    {
+        "0": "Chèvre",
+        "1": "Laitier",
+        "2": "HIVER",
+        "3": "Sarthe",
+        "": 8
+    },
+    {
+        "0": "Molle à croûte naturelle",
+        "1": "Laitier",
+        "2": "PRINTEMPS",
+        "3": "Gers",
+        "": 9
+    },
+    {
+        "0": "Anneau du Vic-Bilh",
+        "1": "Laitier",
+        "2": "ETE",
+        "3": "Eure-et-Loir",
+        "": 10
+    },
+    {
+        "0": "Molle à croûte naturelle",
+        "1": "Laitier",
+        "2": "PRINTEMPS",
+        "3": "Ariège",
+        "": 11
+    },
+    {
+        "0": "Appenzeller",
+        "1": "Laitier",
+        "2": "ETE",
+        "3": "Corse-du-Sud",
+        "": 12
+    },
+    {
+        "0": "Vache",
+        "1": "Laitier",
+        "2": "ANUELLE",
+        "3": "Doubs",
+        "": 13
+    },
+    {
+        "0": "Pressée cuite",
+        "1": "Laitier",
+        "2": "HIVER",
+        "3": "Landes",
+        "": 14
+    },
+    {
+        "0": "Ariégeois",
+        "1": "Laitier",
+        "2": "HIVER",
+        "3": "Ardêche",
+        "": 15
+    },
+    {
+        "0": "Pressée non cuite",
+        "1": "Laitier",
+        "2": "PRINTEMPS",
+        "3": "Bouches-du-Rhône",
+        "": 16
+    },
+    {
+        "0": "veau",
+        "1": "Viandes",
+        "2": "PRINTEMPS",
+        "3": "Charente",
+        "": 17
+    },
+    {
+        "0": "araignée",
+        "1": "Viandes",
+        "2": "HIVER",
+        "3": "Lot",
+        "": 18
+    },
+    {
+        "0": "homard",
+        "1": "Viandes",
+        "2": "AUTOMNE",
+        "3": "Hautes-Alpes",
+        "": 19
+    },
+    {
+        "0": "crabe",
+        "1": "Viandes",
+        "2": "ANUELLE",
+        "3": "Yonne",
+        "": 20
+    },
+    {
+        "0": "maquereau",
+        "1": "Viandes",
+        "2": "AUTOMNE",
+        "3": "Tarn-et-Garonne",
+        "": 21
+    },
+    {
+        "0": "cabillaud",
+        "1": "Viandes",
+        "2": "AUTOMNE",
+        "3": "Haut-Rhin",
+        "": 22
+    },
+    {
+        "0": "hareng",
+        "1": "Viandes",
+        "2": "AUTOMNE",
+        "3": "Loir-et-Cher",
+        "": 23
+    },
+    {
+        "0": "anchois",
+        "1": "Viandes",
+        "2": "HIVER",
+        "3": "Lozère",
+        "": 24
+    },
+    {
+        "0": "dorade royale",
+        "1": "Viandes",
+        "2": "PRINTEMPS",
+        "3": "Drôme",
+        "": 25
+    },
+    {
+        "0": "amande",
+        "1": "Viandes",
+        "2": "HIVER",
+        "3": "Pyrénées-Atlantiques",
+        "": 26
+    },
+    {
+        "0": "vernis",
+        "1": "Viandes",
+        "2": "PRINTEMPS",
+        "3": "Haute-Savoie",
+        "": 27
+    },
+    {
+        "0": "coquilles St Jacques",
+        "1": "Viandes",
+        "2": "HIVER",
+        "3": "Vendée",
+        "": 28
+    },
+    {
+        "0": "maigres",
+        "1": "Viandes",
+        "2": "ANUELLE",
+        "3": "Seine-Maritime",
+        "": 29
+    },
+    {
+        "0": "julienne",
+        "1": "Viandes",
+        "2": "HIVER",
+        "3": "Hérault",
+        "": 30
+    },
+    {
+        "0": "maigre",
+        "1": "Viandes",
+        "2": "ANUELLE",
+        "3": "Loiret",
+        "": 31
+    },
+    {
+        "0": "bar",
+        "1": "Viandes",
+        "2": "ETE",
+        "3": "Hautes-Alpes",
+        "": 32
+    },
+    {
+        "0": "limande",
+        "1": "Viandes",
+        "2": "AUTOMNE",
+        "3": "Dordogne",
+        "": 33
+    },
+    {
+        "0": "congre",
+        "1": "Viandes",
+        "2": "ANUELLE",
+        "3": "Ariège",
+        "": 34
+    },
+    {
+        "0": "thon",
+        "1": "Viandes",
+        "2": "ETE",
+        "3": "Vienne",
+        "": 35
+    },
+    {
+        "0": "bovin",
+        "1": "Viandes",
+        "2": "ANUELLE",
+        "3": "Hautes-Alpes",
+        "": 36
+    },
+    {
+        "0": "porc",
+        "1": "Viandes",
+        "2": "AUTOMNE",
+        "3": "Lot-et-Garonne",
+        "": 37
+    },
+    {
+        "0": "mouton",
+        "1": "Viandes",
+        "2": "ETE",
+        "3": "Isère",
+        "": 38
+    },
+    {
+        "0": "agneau",
+        "1": "Viandes",
+        "2": "PRINTEMPS",
+        "3": "Loire-Atlantique",
+        "": 39
+    },
+    {
+        "0": "poulet",
+        "1": "Viandes",
+        "2": "AUTOMNE",
+        "3": "Mayenne",
+        "": 40
+    },
+    {
+        "0": "canard",
+        "1": "Viandes",
+        "2": "ETE",
+        "3": "Lot",
+        "": 41
+    },
+    {
+        "0": "dinde",
+        "1": "Viandes",
+        "2": "AUTOMNE",
+        "3": "Nièvre",
+        "": 42
+    },
+    {
+        "0": "lapin",
+        "1": "Viandes",
+        "2": "AUTOMNE",
+        "3": "Maine-et-Loire",
+        "": 43
+    },
+    {
+        "0": "Blé",
+        "1": "Céréales",
+        "2": "HIVER",
+        "3": "Charente",
+        "": 44
+    },
+    {
+        "0": "Maïs",
+        "1": "Céréales",
+        "2": "AUTOMNE",
+        "3": "Var",
+        "": 45
+    },
+    {
+        "0": "Orge",
+        "1": "Céréales",
+        "2": "ETE",
+        "3": "Manche",
+        "": 46
+    },
+    {
+        "0": "Tritical",
+        "1": "Céréales",
+        "2": "HIVER",
+        "3": "Doubs",
+        "": 47
+    },
+    {
+        "0": "Avoine",
+        "1": "Céréales",
+        "2": "HIVER",
+        "3": "Tarn",
+        "": 48
+    },
+    {
+        "0": "Riz",
+        "1": "Céréales",
+        "2": "HIVER",
+        "3": "Marne",
+        "": 49
+    },
+    {
+        "0": "Sorgho",
+        "1": "Céréales",
+        "2": "ETE",
+        "3": "Vosges",
+        "": 50
+    },
+    {
+        "0": "Seigle",
+        "1": "Céréales",
+        "2": "HIVER",
+        "3": "Eure-et-Loir",
+        "": 51
+    },
+    {
+        "0": "Abricot",
+        "1": "Fruits",
+        "2": "ETE",
+        "3": "Corrèze",
+        "": 52
+    },
+    {
+        "0": "Airelle",
+        "1": "Fruits",
+        "2": "ETE",
+        "3": "Meuse",
+        "": 53
+    },
+    {
+        "0": "Amande",
+        "1": "Fruits",
+        "2": "ETE",
+        "3": "Loiret",
+        "": 54
+    },
+    {
+        "0": "Ananas",
+        "1": "Fruits",
+        "2": "ANUELLE",
+        "3": "Meuse",
+        "": 55
+    },
+    {
+        "0": "Avocat",
+        "1": "Fruits",
+        "2": "ANUELLE",
+        "3": "Moselle",
+        "": 56
+    },
+    {
+        "0": "Banane",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Gard",
+        "": 57
+    },
+    {
+        "0": "Cassis",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Loire",
+        "": 58
+    },
+    {
+        "0": "Cerise",
+        "1": "Fruits",
+        "2": "ANUELLE",
+        "3": "Haute-Vienne",
+        "": 59
+    },
+    {
+        "0": "Châtaigne",
+        "1": "Fruits",
+        "2": "ANUELLE",
+        "3": "Haute-Garonne",
+        "": 60
+    },
+    {
+        "0": "Citron",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Territoire-de-Belfort",
+        "": 61
+    },
+    {
+        "0": "Clémentine",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Tarn-et-Garonne",
+        "": 62
+    },
+    {
+        "0": "Coing",
+        "1": "Fruits",
+        "2": "ANUELLE",
+        "3": "Côtes d'Armor",
+        "": 63
+    },
+    {
+        "0": "Datte",
+        "1": "Fruits",
+        "2": "ETE",
+        "3": "Paris",
+        "": 64
+    },
+    {
+        "0": "Figue fraîche",
+        "1": "Fruits",
+        "2": "AUTOMNE",
+        "3": "Aube",
+        "": 65
+    },
+    {
+        "0": "Fraise",
+        "1": "Fruits",
+        "2": "ETE",
+        "3": "Vosges",
+        "": 66
+    },
+    {
+        "0": "Fraise des bois",
+        "1": "Fruits",
+        "2": "AUTOMNE",
+        "3": "Lot-et-Garonne",
+        "": 67
+    },
+    {
+        "0": "Framboise",
+        "1": "Fruits",
+        "2": "ETE",
+        "3": "Orne",
+        "": 68
+    },
+    {
+        "0": "Fruit de la passion",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Eure-et-Loir",
+        "": 69
+    },
+    {
+        "0": "Grenade",
+        "1": "Fruits",
+        "2": "ETE",
+        "3": "Allier",
+        "": 70
+    },
+    {
+        "0": "Groseille",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Côtes d'Armor",
+        "": 71
+    },
+    {
+        "0": "Groseille à maquereau",
+        "1": "Fruits",
+        "2": "PRINTEMPS",
+        "3": "Haute-Garonne",
+        "": 72
+    },
+    {
+        "0": "Kaki",
+        "1": "Fruits",
+        "2": "AUTOMNE",
+        "3": "Lozère",
+        "": 73
+    },
+    {
+        "0": "Kiwi",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Seine-Maritime",
+        "": 74
+    },
+    {
+        "0": "Kumquat",
+        "1": "Fruits",
+        "2": "PRINTEMPS",
+        "3": "Pyrénées-Atlantiques",
+        "": 75
+    },
+    {
+        "0": "Litchi",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Dordogne",
+        "": 76
+    },
+    {
+        "0": "Mandarine",
+        "1": "Fruits",
+        "2": "AUTOMNE",
+        "3": "Charente-Maritime",
+        "": 77
+    },
+    {
+        "0": "Mangue",
+        "1": "Fruits",
+        "2": "ANUELLE",
+        "3": "Puy-de-Dôme",
+        "": 78
+    },
+    {
+        "0": "Marron",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Rhône",
+        "": 79
+    },
+    {
+        "0": "Melon",
+        "1": "Fruits",
+        "2": "ETE",
+        "3": "Var",
+        "": 80
+    },
+    {
+        "0": "Mirabelle",
+        "1": "Fruits",
+        "2": "ETE",
+        "3": "Seine-Saint-Denis",
+        "": 81
+    },
+    {
+        "0": "Mûre",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Charente",
+        "": 82
+    },
+    {
+        "0": "Myrtille",
+        "1": "Fruits",
+        "2": "ANUELLE",
+        "3": "Allier",
+        "": 83
+    },
+    {
+        "0": "Nectarine",
+        "1": "Fruits",
+        "2": "ANUELLE",
+        "3": "Lozère",
+        "": 84
+    },
+    {
+        "0": "Noisette",
+        "1": "Fruits",
+        "2": "ANUELLE",
+        "3": "Meuse",
+        "": 85
+    },
+    {
+        "0": "Noix",
+        "1": "Fruits",
+        "2": "PRINTEMPS",
+        "3": "Manche",
+        "": 86
+    },
+    {
+        "0": "Orange",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Gard",
+        "": 87
+    },
+    {
+        "0": "Orange sanguine",
+        "1": "Fruits",
+        "2": "ANUELLE",
+        "3": "Deux-Sèvres",
+        "": 88
+    },
+    {
+        "0": "Pamplemousse",
+        "1": "Fruits",
+        "2": "AUTOMNE",
+        "3": "Vosges",
+        "": 89
+    },
+    {
+        "0": "Papaye",
+        "1": "Fruits",
+        "2": "ETE",
+        "3": "Seine-et-Marne",
+        "": 90
+    },
+    {
+        "0": "Pastèque",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Saône-et-Loire",
+        "": 91
+    },
+    {
+        "0": "Pêche",
+        "1": "Fruits",
+        "2": "ANUELLE",
+        "3": "Bas-Rhin",
+        "": 92
+    },
+    {
+        "0": "Poire",
+        "1": "Fruits",
+        "2": "HIVER",
+        "3": "Oise",
+        "": 93
+    },
+    {
+        "0": "Pomme",
+        "1": "Fruits",
+        "2": "ANUELLE",
+        "3": "Alpes de Haute-Provence",
+        "": 94
+    },
+    {
+        "0": "Prune",
+        "1": "Fruits",
+        "2": "ETE",
+        "3": "Gironde",
+        "": 95
+    },
+    {
+        "0": "Quetsche",
+        "1": "Fruits",
+        "2": "AUTOMNE",
+        "3": "Aveyron",
+        "": 96
+    },
+    {
+        "0": "Raisin",
+        "1": "Fruits",
+        "2": "AUTOMNE",
+        "3": "Haut-Rhin",
+        "": 97
+    },
+    {
+        "0": "Reine-claude",
+        "1": "Fruits",
+        "2": "PRINTEMPS",
+        "3": "Val-de-Marne",
+        "": 98
+    },
+    {
+        "0": "Tomate",
+        "1": "Légumes",
+        "2": "PRINTEMPS",
+        "3": "Alpes-Maritimes",
+        "": 99
+    },
+    {
+        "0": "Tomate charnue",
+        "1": "Légumes",
+        "2": "AUTOMNE",
+        "3": "Bouches-du-Rhône",
+        "": 100
+    },
+    {
+        "0": "Tomate Peretti",
+        "1": "Légumes",
+        "2": "ANUELLE",
+        "3": "Var",
+        "": 101
+    },
+    {
+        "0": "Artichaut",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Sarthe",
+        "": 102
+    },
+    {
+        "0": "Asperge blanche",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Sarthe",
+        "": 103
+    },
+    {
+        "0": "Asperge verte",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Gers",
+        "": 104
+    },
+    {
+        "0": "Aubergine",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Bouches-du-Rhône",
+        "": 105
+    },
+    {
+        "0": "Bette",
+        "1": "Légumes",
+        "2": "ANUELLE",
+        "3": "Lot-et-Garonne",
+        "": 106
+    },
+    {
+        "0": "Betterave rouge",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Hérault",
+        "": 107
+    },
+    {
+        "0": "Brocoli",
+        "1": "Légumes",
+        "2": "ANUELLE",
+        "3": "Haute-Savoie",
+        "": 108
+    },
+    {
+        "0": "Carotte",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Calvados",
+        "": 109
+    },
+    {
+        "0": "Catalonia",
+        "1": "Légumes",
+        "2": "PRINTEMPS",
+        "3": "Oise",
+        "": 110
+    },
+    {
+        "0": "Céleri",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Yvelines",
+        "": 111
+    },
+    {
+        "0": "Céleri branche",
+        "1": "Légumes",
+        "2": "ANUELLE",
+        "3": "Côte-d'Or",
+        "": 112
+    },
+    {
+        "0": "Céleri rave",
+        "1": "Légumes",
+        "2": "PRINTEMPS",
+        "3": "Creuse",
+        "": 113
+    },
+    {
+        "0": "Chou blanc",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Seine-Maritime",
+        "": 114
+    },
+    {
+        "0": "Chou de Bruxelles",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Allier",
+        "": 115
+    },
+    {
+        "0": "Chou frisé",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Doubs",
+        "": 116
+    },
+    {
+        "0": "Chou Romanesco",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Val-de-Marne",
+        "": 117
+    },
+    {
+        "0": "Chou rouge",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Ariège",
+        "": 118
+    },
+    {
+        "0": "Chou-chinois",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Corse-du-Sud",
+        "": 119
+    },
+    {
+        "0": "Chou-fleur",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Haute-Marne",
+        "": 120
+    },
+    {
+        "0": "Chou-rave",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Aveyron",
+        "": 121
+    },
+    {
+        "0": "Cima di Rapa",
+        "1": "Légumes",
+        "2": "AUTOMNE",
+        "3": "Val-de-Marne",
+        "": 122
+    },
+    {
+        "0": "Citrouille",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Vienne",
+        "": 123
+    },
+    {
+        "0": "Concombre",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Yonne",
+        "": 124
+    },
+    {
+        "0": "Courge",
+        "1": "Légumes",
+        "2": "ANUELLE",
+        "3": "Hautes-Alpes",
+        "": 125
+    },
+    {
+        "0": "Courgette",
+        "1": "Légumes",
+        "2": "PRINTEMPS",
+        "3": "Var",
+        "": 126
+    },
+    {
+        "0": "Cresson",
+        "1": "Légumes",
+        "2": "PRINTEMPS",
+        "3": "Lot",
+        "": 127
+    },
+    {
+        "0": "Endive",
+        "1": "Légumes",
+        "2": "AUTOMNE",
+        "3": "Territoire-de-Belfort",
+        "": 128
+    },
+    {
+        "0": "Epinard",
+        "1": "Légumes",
+        "2": "ANUELLE",
+        "3": "Charente-Maritime",
+        "": 129
+    },
+    {
+        "0": "Fenouil",
+        "1": "Légumes",
+        "2": "PRINTEMPS",
+        "3": "Haute-Marne",
+        "": 130
+    },
+    {
+        "0": "Haricot",
+        "1": "Légumes",
+        "2": "ANUELLE",
+        "3": "Sarthe",
+        "": 131
+    },
+    {
+        "0": "Laitue romaine",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Haut-Rhin",
+        "": 132
+    },
+    {
+        "0": "Mâche",
+        "1": "Légumes",
+        "2": "PRINTEMPS",
+        "3": "Loiret",
+        "": 133
+    },
+    {
+        "0": "Maïs",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Doubs",
+        "": 134
+    },
+    {
+        "0": "Navet",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Haute-Vienne",
+        "": 135
+    },
+    {
+        "0": "Oignon",
+        "1": "Légumes",
+        "2": "AUTOMNE",
+        "3": "Pyrénées-Atlantiques",
+        "": 136
+    },
+    {
+        "0": "Panais",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Sarthe",
+        "": 137
+    },
+    {
+        "0": "Pâtisson",
+        "1": "Légumes",
+        "2": "PRINTEMPS",
+        "3": "Côte-d'Or",
+        "": 138
+    },
+    {
+        "0": "Petit oignon blanc",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Vosges",
+        "": 139
+    },
+    {
+        "0": "Petit pois",
+        "1": "Légumes",
+        "2": "AUTOMNE",
+        "3": "Haute-Loire",
+        "": 140
+    },
+    {
+        "0": "Poireau",
+        "1": "Légumes",
+        "2": "AUTOMNE",
+        "3": "Drôme",
+        "": 141
+    },
+    {
+        "0": "Pois mange-tout",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Côtes d'Armor",
+        "": 142
+    },
+    {
+        "0": "Poivron",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Haute-Marne",
+        "": 143
+    },
+    {
+        "0": "Pomme de terre",
+        "1": "Légumes",
+        "2": "PRINTEMPS",
+        "3": "Haute-Marne",
+        "": 144
+    },
+    {
+        "0": "Potimarron",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Aveyron",
+        "": 145
+    },
+    {
+        "0": "Potiron",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Nord",
+        "": 146
+    },
+    {
+        "0": "Radis",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Morbihan",
+        "": 147
+    },
+    {
+        "0": "Radis long",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Indre",
+        "": 148
+    },
+    {
+        "0": "Rhubarbe",
+        "1": "Légumes",
+        "2": "AUTOMNE",
+        "3": "Bouches-du-Rhône",
+        "": 149
+    },
+    {
+        "0": "Salsifis",
+        "1": "Légumes",
+        "2": "HIVER",
+        "3": "Somme",
+        "": 150
+    },
+    {
+        "0": "",
+        "1": "",
+        "2": "",
+        "3": "",
+        "": 151
+    },
+    {
+        "0": "Topinambour",
+        "1": "Légumes",
+        "2": "ETE",
+        "3": "Haute-Loire",
+        "": 152
+    }
+]

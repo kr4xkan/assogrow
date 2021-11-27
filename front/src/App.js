@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<ResultPage />} />
+      <Route path="/" element={<AccueilPage />} />
       <Route path="login" element={<LoginPage />} />
 
       <Route exact path='/dashboard' element={<PrivateRoute/>}>
@@ -25,7 +25,7 @@ function App() {
 
 const PrivateRoute = ({component: Component, auth, ...rest}) => {
   const { isLoggedIn } = useContext(AuthContext);
-  
+
   return isLoggedIn ? <Outlet /> : <Navigate to="/login" />;
 }
 
