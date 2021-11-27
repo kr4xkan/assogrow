@@ -62,7 +62,7 @@ const LoginPage = () => {
           </div>
         </div>
       ) : (
-        <div className="form">
+        <div className="form login">
           <div className="input">
             <label for="username">NOM D'ASSOCIATION</label>
             <input type="text" name="username" placeholder="Jacque Houzit Corp" value={username} onChange={(e) => setusername(e.target.value)} />

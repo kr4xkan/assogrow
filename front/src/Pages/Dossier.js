@@ -1,24 +1,31 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../assets/Dossier.css';
 import axios from "axios";
 
 import config from '../config';
 import AuthContext from '../AuthContext';
+import List from './List';
+import DossierItem from '../Components/DossierItem';
 
 const DossierPage = () => {
 
-	const [dossier, setDossier] = useState({
-		nom: "",
-		prenom: "",
-		telephone: "",
-		pdf: "",
-		status: 0
-	})
+	const [dossiers, setDossiers] = useState([]);
 
 	const [nom, setnom] = useState("");
 	const [prenom, setprenom] = useState("");
 	const [telephone, settelephone] = useState("");
 	const [file, setFile] = useState(null);
+
+	useEffect(() => {
+		  const token = localStorage.getItem('token');
+	  axios.get(config.api_url + '/dossier/all', {
+		headers: {
+		  'Authorization': 'Bearer ' + token
+		}
+	  }).then(res => {
+		setDossiers(res.data);
+	  }).catch(err => console.error(err));
+	}, [])
 
 	const fileUpload = (id) => {
 		const formData = new FormData();
@@ -49,7 +56,7 @@ const DossierPage = () => {
 
 	return (
 		<div className="container">
-			<form className="form" onSubmit={create}>
+			<form className="formdos" onSubmit={create}>
 				<div className="input">
 					<label htmlFor="nom">Nom</label>
 					<input type="text" name="nom" value={nom} onChange={(e) => setnom(e.target.value)} />
@@ -62,9 +69,13 @@ const DossierPage = () => {
 					<label htmlFor="telephone">Telephone</label>
 					<input type="text" name="telephone" value={telephone} onChange={(e) => settelephone(e.target.value)} />
 				</div>
-				<input type="file" onChange={(e) => setFile(e.target.files[0])} />
+				<label for="upload">AJOUTER UN PDF</label>
+				<input type="file" id="upload" onChange={(e) => setFile(e.target.files[0])} />
 				<input className="send" type="submit" value="CREER" />
 			</form>
+			<div className="list">
+				<List data={dossiers} Component={DossierItem} />
+			</div>
 		</div>
 	);
 };
