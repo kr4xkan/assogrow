@@ -12,6 +12,12 @@
     position: relative;
 }
 
+.header > svg {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
 .header > .bang {
     font-size: 48px;
     font-weight: bolder;
@@ -20,38 +26,50 @@
     margin-bottom: 64px;
 }
 
-.header > .selectorText {
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.header > .buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 450px;
-}
-
-.header > .buttons > button {
+.header > .inputcontainer {
     border: none;
     font-weight: bold;
-    padding: 16px 32px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px 0 #4a4a4aa7;
+    color: black;
+    transition: all .2s;
+}
+
+.header > .inputcontainer > input {
+    border: none;
+    font-weight: bold;
+    padding: 16px 24px;
+    width: 512px;
     border-radius: 8px;
     background-color: #eee;
     color: black;
     transition: all .2s;
 }
 
-.header > .buttons > button:hover {
-    background-color: #83c683;
-    color: #eee;
+.header > .inputcontainer > button {
+    display: inline-block;
+    border: none;
+    font-weight: bold;
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-left: 16px;
+    background-color: #97dc8a;
+    color: white;
+    transition: all .2s;
+}
+
+.header > .inputcontainer > button:hover {
+    background-color: white;
+    color: rgb(151, 220, 138);
 }
 
 .header > .login {
     position: absolute;
     font-weight: bold;
     top: 32px;
-    right: 0;
+    right: 32px;
     padding: 16px 32px;
     border-radius: 8px;
     background-color: #eee;
@@ -67,13 +85,24 @@
 }
 
 .content {
-    width: 60%;
+    background-color: #97dc8a;
+    width: 100%;
     display: flex;
-    margin: 0 auto;
+    padding: 0 20%;
     flex-direction: column;
     justify-content: center;
 }
 
 .content > div {
     padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px 0 #6c6c6ca7;
+    border-radius: 16px;
+    margin-bottom: 128px;
+}
+.content > div:nth-child(2n) {
+    margin-left: 10%;
+}
+.content > div:nth-child(2n+1) {
+    margin-right: 10%;
 }
