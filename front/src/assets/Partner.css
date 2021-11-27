@@ -27,7 +27,7 @@
 }
 
 .modifButton:hover {
-    background-color: red;
+    background-color: green;
 }
 
 .modifButton:active {
