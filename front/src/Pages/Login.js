@@ -8,7 +8,7 @@ const LoginPage = () => {
         <button  class="signupButton" type="button"> Accueil </button>
       </div>
       <div class="flex-parent jc-center">
-        <form class="form backgroundGrey" action="" method="get">
+        <form class="form" action="" method="get">
           <div class="divSpacing">
             <label class="inlineLabel" for="accountLabel">*Type de compte : </label>
             <input class="inputTab" type="radio" id="AccountType1" name="AccountType" value="producteur"/>
