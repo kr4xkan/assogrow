@@ -7,6 +7,7 @@ const config = require('./config');
 
 const authRoute = require('./routes/auth');
 const productRoute = require('./routes/products');
+const dossierRoute = require('./routes/dossier');
 
 const port = 3000;
 
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/auth', authRoute);
 app.use('/product', productRoute);
+app.use('/dossier', dossierRoute);
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
