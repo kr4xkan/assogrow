@@ -14,10 +14,10 @@ router.get('/all', async(req, res) => {
         return res.status(400).json({ error: errors.array() });
     }
     fetchUserByToken(req).then(async(doc) => {
-            let allPartenaires = Partenaire.find({ asso: _id }).exec();
-            return res.status(200).json(allPartenaires);
-        })
-        .catch(err => res.status(401).json({ err }));
+        let allPartenaires = await Partenaire.find({ asso: doc._id }).exec();
+        return res.status(200).json(allPartenaires);
+    })
+    .catch(err => res.status(401).json({ err }));
 })
 
 router.post('/add', [
@@ -38,7 +38,7 @@ router.post('/add', [
         };
         let newPartenaire = new Partenaire(data);
         await newPartenaire.save();
-        return res.status(200).send();
+        return res.status(200).json(newPartenaire);
     })
     .catch(err => res.status(401).json({ err }));
 });
@@ -59,13 +59,13 @@ router.put('/:id', [
                 if (err) {
                     return res.status(400).json({ error: errors.array() });
                 }
-                if (asso !== doc._id) {
-                    return res.status(401).json({ error: errors.array() });
+                if (!c.asso.equals(doc._id)) {
+                    return res.status(401).json({m:"NOOO"});
                 }
                 c.contact = _contact;
                 c.name = _name;
                 await c.save();
-                res.status(200).send();
+                res.status(200).json(c);
             });
         })
         .catch(err => res.status(401).json({ error: err }));
@@ -79,8 +79,12 @@ router.delete('/:id', [
                 if (err) {
                     return res.status(400).json({ err });
                 }
-                if (asso !== doc._id) {
-                    return res.status(401).json();
+                if (!doc){
+                    return res.status(404).send();
+                }
+                
+                if (!c.asso.equals(doc._id)) {
+                    return res.status(401).send();
                 }
                 await Partenaire.deleteOne({ _id: req.params.id }).exec();
                 res.status(200).send();

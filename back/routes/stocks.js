@@ -8,7 +8,18 @@ const config = require('../config');
 const Partenaire = require('../models/Partenaire');
 const User = require('../models/User');
 const Stock = require('../models/Stock');
-const Product = require('../models/Stock');
+
+router.get('/all', async(req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ error: errors.array() });
+    }
+    fetchUserByToken(req).then(async(doc) => {
+        let allStocks = await Stock.find({ asso: doc._id }).exec();
+        return res.status(200).json(allStocks);
+    })
+    .catch(err => res.status(401).json({ err }));
+})
 
 router.get('/:id', async(req, res) => {
     const errors = validationResult(req);
@@ -17,7 +28,7 @@ router.get('/:id', async(req, res) => {
     }
 
     const stockId = req.params.id;
-    let stocks = Stock.find({ _id: stockId }).exec();
+    let stocks = await Stock.findOne({ _id: stockId }).exec();
     return res.status(200).json(stocks);
 });
 
@@ -35,7 +46,7 @@ router.post('/add', [
     const _item = req.body.item;
     fetchUserByToken(req).then(async(user) => {
         User.findOne({ name: user.name }).then(async(user) => {
-            Partenaire.findOne({ name: _partenaire }).then(async(partenaire) => {
+            Partenaire.findOne({ _id: _partenaire }).then(async(partenaire) => {
                 let data = {
                     partenaire: partenaire._id,
                     quantite: _quantite,
@@ -62,7 +73,7 @@ router.delete('/:id', (req, res) => {
     const stockId = req.params.id;
     fetchUserByToken(req).then(async(user) => {
         let stock = await Stock.findOne({ _id: stockId }).exec();
-        if (stock.asso === user._id) {
+        if (stock.asso.equals(user._id)) {
             await Stock.deleteOne({ _id: stockId }).exec();
             res.status(200).send();
         } else {
