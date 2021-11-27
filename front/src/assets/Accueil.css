@@ -1,3 +1,79 @@
-.AcceuilContainer {
-	
+.AccueilContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header > .bang {
+    font-size: 48px;
+    font-weight: bolder;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.header > .selectorText {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header > .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+}
+
+.header > .buttons > button {
+    border: none;
+    font-weight: bold;
+    padding: 16px 32px;
+    border-radius: 8px;
+    background-color: #eee;
+    color: black;
+    transition: all .2s;
+}
+
+.header > .buttons > button:hover {
+    background-color: #83c683;
+    color: #eee;
+}
+
+.header > .login {
+    position: absolute;
+    font-weight: bold;
+    top: 32px;
+    right: 0;
+    padding: 16px 32px;
+    border-radius: 8px;
+    background-color: #eee;
+    color: black;
+    text-decoration: none;
+    transition: all .2s;
+}
+
+.header > .login:hover {
+    background-color: black;
+    color: #eee;
+    cursor: pointer;
+}
+
+.content {
+    width: 60%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content > div {
+    padding: 16px;
 }
