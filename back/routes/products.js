@@ -1,101 +1,128 @@
 const express = require('express');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
+const JWT = require('jsonwebtoken');
 
 const config = require('../config');
+const User = require('../models/User');
 const Product = require('../models/Product');
 
-router.get('/all', async(req, res) => {
-    Product.find({}, function(err, resa) {
-        if (err) {
-            return res.status(400).json({ error: err });
-        } else {
-            res.status(200).json(resa);
-        }
-    });
-});
-
-router.delete('/delete', [
-    body('id').exists().isString()
-], async(req, res) => {
-    const _id = parseInt(req.body.id);
-    Product.findOne({ id: _id }, function(err, resa) {
-        if (err) {
-            return res.status(400).json({ error: err });
-        }
-        if (!resa) {
-            return res.send(404);
-        } else {
-            resa.remove(function(err) {
-                if (err) {
-                    return res.status(400).json({ error: err });
-                }
-                return res.send(204);
-            });
-        }
-    });
-});
-
-router.post('/new', [
-    body('provenance').exists().isString(),
-    body('saison').exists().isString(),
-    body('categorie').exists().isString(),
-    body('name').exists().isString()
-], async(req, res) => {
-    const _name = req.body.name;
-    const _saison = req.body.saison;
-    const _categorie = req.body.categorie;
-    const _provenance = req.body.provenance;
-    let newProduct = new Product({
-        name: _name,
-        categorie: _categorie,
-        saison: _saison,
-        provenance: _provenance
-    })
-    await newProduct.save();
-    res.status(200).send();
-});
-
-router.put('/update', [
-    body('provenance').exists().isString(),
-    body('saison').exists().isString(),
-    body('categorie').exists().isString(),
+router.post('/publish', [
     body('name').exists().isString(),
-    body('id').exists().isString()
+    body('desc').exists().isString(),
+    body('location').exists().isString(),
+    body('price').exists().isNumeric(),
 ], async(req, res) => {
-
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ error: errors.array() });
+    }
     const _name = req.body.name;
-    const _saison = req.body.saison;
-    const _categorie = req.body.categorie;
-    const _provenance = req.body.provenance;
-    const _id = parseInt(req.body.id);
+    const _desc = req.body.desc;
+    const _location = req.body.location;
+    const _price = req.body.price;
 
-    let product = Product.findOne({ id: _id }).then(async(user) => {
-        if (!user)
-            return res.status(404).send();
-        if (product.name != _name && _name != "") {
-            Product.updateOne({ id: _id }, { name: _name });
-        }
-        if (product.saison != _saison && _saison != "") {
-            Product.updateOne({ id: _id }, { name: _saison });
-        }
-        if (product.categorie != _categorie && _categorie != "") {
-            Product.updateOne({ id: _id }, { name: _categorie });
-        }
-        if (product.provenance != _provenance && _provenance != "") {
-            Product.updateOne({ id: _id }, { name: _provenance });
-        }
-        res.send(200);
-    });
-
-    let newProduct = new Product({
-        name: _name,
-        categorie: _categorie,
-        saison: _saison,
-        provenance: _provenance
+    fetchUserByToken(req).then(async (user) => {
+        let data = {
+            name: _name,
+            owner: user._id,
+            location: _location,
+            desc: _desc,
+            price: _price
+        };
+        let newProduct = new Product(data);
+        await newProduct.save();
+        res.status(200).json(data);
+    }).catch((err) => {
+        res.status(401).json({ success: false, errors: err })
     })
-    await newProduct.save();
-    res.status(200).send();
 });
+
+router.get('/search', [
+    body('query').exists().isString()
+], (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ error: errors.array() });
+    }
+    const _query = req.body.query;
+    Product.find({"name": { "$regex": _query }}).populate('owner', 'username').exec((err, products) => {
+        if (err) {
+            return res.status(500).json({err});
+        }
+        products.each((v) => { v.user = v.user.name });
+        return res.json(products);
+    });
+});
+
+router.get('/all', async(req, res) => {
+    Product.find({}).populate('owner', 'username').exec((err, products) => {
+        if (err) {
+            return res.status(400).json({ error: err });
+        } else {
+            res.status(200).json(products);
+        }
+    });
+});
+
+router.get('/:id', (req, res) => {
+    const productId = req.params.id;
+
+    fetchUserByToken(req).then(async (user) => {
+        
+        Product.findOne({_id: productId}).populate('owner', 'username').exec((err, product) => {
+            if (err) {
+                return res.status(500).json({err});
+            }
+            res.status(200).json(product);
+        });
+    }).catch((err) => {
+        res.status(401).json({ success: false, errors: err })
+    })
+});
+
+router.delete('/:id', (req, res) => {
+    const productId = req.params.id;
+    fetchUserByToken(req).then(async (user) => {
+        let product = await Product.findOne({_id: productId}).exec();
+        if (product.owner = user._id) {
+            await Product.deleteOne({_id: productId}).exec();
+            res.status(200).send();
+        } else {
+            res.status(401).send();
+        }
+    }).catch((err) => {
+        res.status(401).json({ success: false, errors: err });
+    })
+});
+
+function fetchUserByToken(req) {
+    return new Promise((resolve,reject) => {
+        if(req.headers && req.headers.authorization) {
+            let authorization = req.headers.authorization
+            if (authorization.startsWith('Bearer ')) {
+                authorization = authorization.slice(7, authorization.length)
+            }
+            let decoded
+            try {
+                decoded = JWT.verify(authorization, config.jwtsecret)
+            } catch (e) {
+                reject('Token unvalid, '+e)
+                return
+            }
+            User.findOne({_id: decoded.id}, (err, doc) => {
+                if (err) {
+                    reject('Token error,'+err)
+                }
+                if (doc.accessToken == authorization)
+                    resolve(doc)
+                else
+                    reject('Token unvalid')
+            });
+        } else {
+            reject('No Token')
+        }
+    })
+}
 
 module.exports = router;

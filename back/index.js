@@ -8,14 +8,14 @@ const config = require('./config');
 const authRoute = require('./routes/auth');
 const productRoute = require('./routes/products');
 
-const port = 3001;
+const port = 3000;
 
 app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/auth', authRoute);
-app.use('/products', productRoute);
+app.use('/product', productRoute);
 
 app.get('/', (req, res) => {
     res.send('Hello World!');

@@ -4,5 +4,6 @@ module.exports = {
         iterations: 10000,
         size: 64,
         digest: "sha256"
-    }
+    },
+    jwtsecret: 'CEWHJKHCJKWEHJKCHWEUIHCUHWEHCJKEHCBHJEWBQJKCXNEJQWHCJKLEWHNCBEWHU'
 }

@@ -3,13 +3,13 @@ const crypto = require('crypto');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 
+const JWT = require('jsonwebtoken');
+
 const config = require('../config');
 const User = require('../models/User');
 
 router.post('/register', [
-    body('name').exists().isString(),
-    body('siret').exists().isString(),
-    body('address').exists().isString(),
+    body('username').exists().isString(),
     body('email').exists().isEmail(),
     body('password').exists()
 	// .isHash('sha256')
@@ -18,29 +18,21 @@ router.post('/register', [
     if (!errors.isEmpty()) {
         return res.status(400).json({ error: errors.array() });
     }
-    const _name = req.body.name;
-    const _siret = req.body.siret;
-    const _address = req.body.address;
+    const _username = req.body.username;
     const _password = req.body.password;
     const _email = req.body.email;
 
-    let siretCount = await User.countDocuments({siret: _siret}).exec();
     let emailCount = await User.countDocuments({email: _email}).exec();
 
-	if (siretCount != 0) {
-        return res.status(400).json({ error: "siret" });
-	}
 	if (emailCount != 0) {
-        return res.status(400).json({ error: "email" });
+        return res.status(400).json({ error: "exists" });
 	}
 
     let salt = crypto.randomBytes(64).toString('base64');
     let hashedPassword = crypto.pbkdf2Sync(_password, salt, config.crypto.iterations, config.crypto.size, config.crypto.digest).toString('base64');
 
     let willSend = {
-		siret: _siret,
-		name: _name,
-		address: _address,
+		username: _username,
         email: _email
     };
 
@@ -73,11 +65,15 @@ router.post('/login', [
         let tmpPassword = crypto.pbkdf2Sync(_password, split[0], config.crypto.iterations, config.crypto.size, config.crypto.digest).toString('base64')
         
         if (tmpPassword === split[1]) {
+
+            let accessToken = JWT.sign({id: user._id}, config.jwtsecret, {expiresIn: '42h', algorithm: 'HS256'})
+            user.accessToken = accessToken;
+            await user.save()
+
             res.status(200).json({
-                siret: user.siret,
-                name: user.name,
                 address: user.address,
-                email: user.email
+                email: user.email,
+                accessToken
             })
         } else {
             res.status(400).json({ error: "password" })
