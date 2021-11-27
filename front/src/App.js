@@ -8,6 +8,7 @@ import DashboardPage from './Pages/Dashboard';
 import LoginPage from './Pages/Login';
 
 function App() {
+
   return (
     <Routes>
       <Route path="/" element={<AccueilPage />} />

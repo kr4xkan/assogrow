@@ -37,16 +37,20 @@ router.post('/register', [
     let salt = crypto.randomBytes(64).toString('base64');
     let hashedPassword = crypto.pbkdf2Sync(_password, salt, config.crypto.iterations, config.crypto.size, config.crypto.digest).toString('base64');
 
-    let newUser = new User({
+    let willSend = {
 		siret: _siret,
 		name: _name,
 		address: _address,
-        email: _email,
+        email: _email
+    };
+
+    let newUser = new User({
+        ...willSend,
         password: `${salt}:${hashedPassword}`
     })
     await newUser.save();
 
-    res.status(200).send();
+    res.status(200).json(willSend);
 });
 
 router.post('/login', [
@@ -69,7 +73,12 @@ router.post('/login', [
         let tmpPassword = crypto.pbkdf2Sync(_password, split[0], config.crypto.iterations, config.crypto.size, config.crypto.digest).toString('base64')
         
         if (tmpPassword === split[1]) {
-            res.status(200).json({ name: user.name, })
+            res.status(200).json({
+                siret: user.siret,
+                name: user.name,
+                address: user.address,
+                email: user.email
+            })
         } else {
             res.status(400).json({ error: "password" })
         }
