@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import '../assets/Accueil.css';
 
 const AccueilPage = () => {
@@ -11,7 +12,7 @@ const AccueilPage = () => {
                     <button>PRODUCTEUR</button>
                     <button>ENTREPRISE</button>
                 </div>
-                <a class="login">SE CONNECTER</a>
+                <Link class="login" to="/login">SE CONNECTER</Link>
             </div>
             <div class="content">
                 <div>

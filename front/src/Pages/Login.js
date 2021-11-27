@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import '../assets/Login.css';
 
 const LoginPage = () => {
   return (
     <div class="background">
       <div>
-        <button  class="signupButton" type="button"> Accueil </button>
+        <Link class="signupButton" to="/">Accueil</Link>
       </div>
       <div class="flex-parent jc-center">
         <form class="form backgroundGrey" action="" method="get">

@@ -24,10 +24,11 @@
 .signupButton {
     border: 0;
     border-radius: 10px;
-    text-align: center;
     margin: 10px;
-    padding: 10px;
+    padding: 10px 16px;
     font-size: medium;
+    background-color: #eee;
+    color: black;
 }
 
 .signupButton:hover {
