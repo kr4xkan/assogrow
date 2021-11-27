@@ -1,62 +1,60 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .form {
-    max-width: 40%;
-    margin: 20px;
-    padding: 15px;
-}
-
-.inputTab {
-    margin-left: 5px;
-}
-
-.labelTab {
-    margin-left: 2px;
-}
-
-.divSpacing {
-    margin-bottom: 15px;
-}
-
-.asteriskExplanation {
-    font-size:x-small;
-}
-
-.signupButton {
-    border: 0;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 10px 16px;
-    font-size: medium;
-    background-color: #eee;
-    color: black;
-}
-
-.signupButton:hover {
-    background-color: green;
-}
-
-.signupButton:active {
-    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
-                inset 2px 2px 3px rgba(0, 0, 0, .6);
-}
-
-.inlineLabel {
-    display: inline-block;
-    width: 200px;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.flex-parent {
     display: flex;
-}
-
-.jc-center {
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 512px;
+    margin-top: 128px;
 }
 
-.background {
-    background: linear-gradient(mediumturquoise, rgba(16, 173, 166, 0.959));
+.form > .input {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-bottom: 32px;
+}
+
+.form > .input > label {
+    font-weight: bold;
+}
+
+.form > .input > input {
+    border: none;
+    padding: 16px 24px;
+    background-color: #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 #b6b6b6;
+    transition: all 0.1s;
+}
+
+.form > .submit > .toggle {
+    background-color: white;
+    color: #222;
+    margin-right: 32px;
+}
+
+.form > .submit > input {
+    border: none;
+    padding: 16px 24px;
+    background-color: #222;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 #b6b6b6;
+    transition: all 0.1s;
+}
+
+.form > .submit > .submit:hover {
+    background-color: white;
+    color: #222;
+}
+
+::placeholder {
+    font-style: italic;
 }

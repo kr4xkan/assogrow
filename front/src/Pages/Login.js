@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import '../assets/Login.css';
 import axios from "axios";
 
@@ -9,21 +9,35 @@ import AuthContext from '../AuthContext';
 const LoginPage = () => {
   const { login, isLoggedIn } = useContext(AuthContext);
 
-  const [name, setname] = useState("");
-  const [siret, setsiret] = useState("");
-  const [email, setemail] = useState("");
-  const [pwd, setpwd] = useState("");
-  const [address, setaddress] = useState("");
+  const [toggle, setToggle] = useState(true);
 
-  const register = async () => {
-    axios.post(`${config.api_url}/auth/register`, {
-      name,
-      siret,
+  const [username, setusername] = useState("");
+  const [email, setemail] = useState("");
+  const [password, setpwd] = useState("");
+  const [passwordconf, setpwdconf] = useState("");
+
+  const sendLogin = async () => {
+    if (email.length < 1 || password.length < 1) {
+      return;
+    }
+    axios.post(`${config.api_url}/auth/login`, {
       email,
-      password: pwd,
-      address
+      password
     }).then(response => {
       login(response);
+    }).catch(err => console.error(err));
+  }
+
+  const sendRegister = async () => {
+    if (email.length < 1 || password.length < 1 || password !== passwordconf) {
+      return;
+    }
+    axios.post(`${config.api_url}/auth/register`, {
+      username,
+      email,
+      password
+    }).then(() => {
+      setToggle(true);
     }).catch(err => console.error(err));
   }
 
@@ -31,55 +45,46 @@ const LoginPage = () => {
     return (<Navigate to="/dashboard" />)
 
   return (
-    <div class="background">
-      <div>
-        <Link class="signupButton" to="/">Accueil</Link>
-      </div>
-      <div class="flex-parent jc-center">
-        <form class="form" action="" method="get">
-          <div class="divSpacing">
-            <label class="inlineLabel" htmlFor="accountLabel">*Type de compte : </label>
-            <input class="inputTab" type="radio" id="AccountType1" name="AccountType" value="producteur"/>
-            <label class="labelTab" htmlFor="AccountType1">Producteur</label>
-            <input class="inputTab" type="radio" id="AccountType2" name="AccountType" value="entreprise"/>
-            <label class="labelTab" htmlFor="AccountType2">Entreprise</label>
+    <div class="container">
+      { toggle ? (
+        <div className="form">
+          <div className="input">
+            <label for="email">EMAIL</label>
+            <input type="text" name="email" placeholder="jacque_houzit@ggh.fr" value={email} onChange={(e) => setemail(e.target.value)} />
           </div>
-          <div class="divSpacing">
-            <label class="inlineLabel" htmlFor="societyName">*Nom de l'entreprise : </label>
-            <input type="text" name="SocietyName" required value={name} onChange={(e) => setname(e.target.value)} />
+          <div className="input">
+            <label for="password">PASSWORD</label>
+            <input type="password" name="password" value={password} onChange={(e) => setpwd(e.target.value)} />
           </div>
-          <div class="divSpacing">
-            <label class="inlineLabel" htmlFor="siretNumber">*N° SIRET : </label>
-            <input type="text" name="SiretNumber" required value={siret} onChange={(e) => setsiret(e.target.value)}/>
+          <div className="submit">
+            <input className="toggle" type="submit" value="PAS DE COMPTE ?" onClick={() => setToggle(false)} />
+            <input className="submit" type="submit" value="SE CONNECTER" onClick={() => sendLogin()} />
           </div>
-          <div class="divSpacing">
-            <label class="inlineLabel" htmlFor="email">*Email : </label>
-            <input type="email" name="Email" required value={email} onChange={(e) => setemail(e.target.value)}/>
+        </div>
+      ) : (
+        <div className="form">
+          <div className="input">
+            <label for="username">NOM D'ASSOCIATION</label>
+            <input type="text" name="username" placeholder="Jacque Houzit Corp" value={username} onChange={(e) => setusername(e.target.value)} />
           </div>
-          {/* <div class="divSpacing">
-            <label class="inlineLabel" htmlFor="telNumber">*N° Téléphone : </label>
-            <input type="tel" name="TelNumber" required value={name} onChange={(e) => setname(e.target.value)}/>
-          </div> */}
-          <div class="divSpacing">
-            <label class="inlineLabel" htmlFor="adresse">*Adresse : </label>
-            <input type="text" name="Adresse" required value={address} onChange={(e) => setaddress(e.target.value)}/>
+          <div className="input">
+            <label for="email">EMAIL</label>
+            <input type="text" name="email" placeholder="jacque_houzit@ggh.fr" value={email} onChange={(e) => setemail(e.target.value)} />
           </div>
-          <div class="divSpacing">
-            <label class="inlineLabel" htmlFor="mdp">*Mot de passe : </label>
-            <input type="password" name="Mdp" required value={pwd} onChange={(e) => setpwd(e.target.value)}/>
+          <div className="input">
+            <label for="password">MOT DE PASSE</label>
+            <input type="password" name="password" value={password} onChange={(e) => setpwd(e.target.value)} />
           </div>
-          {/* <div class="divSpacing">
-            <label class="inlineLabel" htmlFor="mdpVerif">*Réentrez le mot de passe : </label>
-            <input type="password" name="MdpVerif" required/>
-          </div> */}
-          <div class="divSpacing">
-            <label class="asteriskExplanation">(*) Champ(s) obligatoire(s)</label>
+          <div className="input">
+            <label for="passwordconf">CONFIRMER VOTRE MOT DE PASSE</label>
+            <input type="password" name="passwordconf" value={passwordconf} onChange={(e) => setpwdconf(e.target.value)} />
           </div>
-          <div class="flex-parent jc-center">
-            <button class="signupButton" type="button" onClick={() => register()}> S'inscrire </button>
+          <div className="submit">
+            <input className="toggle" type="submit" value="DEJA UN COMPTE ?" onClick={() => setToggle(true)} />
+            <input className="submit" type="submit" value="S'ENREGISTRER" onClick={() => sendRegister()} />
           </div>
-        </form>
-      </div>
+        </div>
+      )}
     </div>
   );
 };
