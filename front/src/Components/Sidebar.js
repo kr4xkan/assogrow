@@ -35,7 +35,7 @@ const Sidebar = () => {
       <div class="page-content-wrapper">
         <div class="container-fluid">
         <a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle" onLoad={onload}>
-          <img src={img}></img>
+          <img width="32" src={img}></img>
           </a>
         </div>
       </div>
