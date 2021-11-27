@@ -1,3 +1,61 @@
-.LoginContainer {
-	
+
+.form {
+    max-width: 40%;
+    margin: 20px;
+    padding: 15px;
+}
+
+.inputTab {
+    margin-left: 5px;
+}
+
+.labelTab {
+    margin-left: 2px;
+}
+
+.divSpacing {
+    margin-bottom: 15px;
+}
+
+.asteriskExplanation {
+    font-size:x-small;
+}
+
+.signupButton {
+    border: 0;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: medium;
+}
+
+.signupButton:hover {
+    background-color: green;
+}
+
+.signupButton:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.inlineLabel {
+    display: inline-block;
+    width: 200px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-parent {
+    display: flex;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.background {
+    background: linear-gradient(mediumturquoise, rgba(16, 173, 166, 0.959));;
 }
