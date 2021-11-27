@@ -24,7 +24,7 @@ const LoginPage = () => {
       email,
       password
     }).then(response => {
-      login(response);
+      login(response.data);
     }).catch(err => console.error(err));
   }
 

@@ -19,6 +19,7 @@ export const AuthProvider = ({ children }) => {
 			email: user.email,
 			isLoggedIn: true
 		});
+		localStorage.setItem('token', user.accessToken);
 	}
 
 	return (

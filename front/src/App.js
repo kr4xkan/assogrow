@@ -5,6 +5,8 @@ import AuthContext from "./AuthContext";
 
 import AccueilPage from './Pages/Accueil';
 import DashboardPage from './Pages/Dashboard';
+import DossierPage from "./Pages/Dossier";
+import ListPage from "./Pages/List";
 import LoginPage from './Pages/Login';
 import ResultPage from "./Pages/Result";
 
@@ -13,6 +15,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<AccueilPage />} />
+      <Route path="/d" element={<DossierPage />} />
       <Route path="login" element={<LoginPage />} />
 
       <Route exact path='/dashboard' element={<PrivateRoute/>}>

@@ -1,0 +1,43 @@
+
+
+.form > .input {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-bottom: 32px;
+}
+
+.form > .input > label {
+    font-weight: bold;
+}
+
+.form > .input > input {
+    border: none;
+    padding: 16px 24px;
+    background-color: #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 #b6b6b6;
+    transition: all 0.1s;
+}
+
+
+.form > input {
+    border: none;
+    padding: 16px 24px;
+    width: 90%;
+    background-color: #222;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 #b6b6b6;
+    transition: all 0.1s;
+}
+
+.form > input:hover {
+    background-color: white;
+    color: #222;
+}
+
+.form > .send {
+	margin-top: 32px;
+}
