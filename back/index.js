@@ -8,6 +8,8 @@ const config = require('./config');
 const authRoute = require('./routes/auth');
 const productRoute = require('./routes/products');
 const dossierRoute = require('./routes/dossier');
+const stocksRoute = require('./routes/stocks');
+const partenairesRoute = require('./routes/partenaires');
 
 const port = 3000;
 
@@ -18,9 +20,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/auth', authRoute);
 app.use('/product', productRoute);
 app.use('/dossier', dossierRoute);
+app.use('/stocks', stocksRoute);
+app.use('/partenaires', partenairesRoute);
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('HACKATON');
 })
 
 connect();

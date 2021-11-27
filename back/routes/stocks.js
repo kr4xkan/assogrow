@@ -10,7 +10,7 @@ const User = require('../models/User');
 const Stock = require('../models/Stock');
 const Product = require('../models/Stock');
 
-router.get('/get/:id', async(req, res) => {
+router.get('/:id', async(req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ error: errors.array() });
@@ -34,8 +34,8 @@ router.post('/add', [
     const _quantite = req.body.quantite;
     const _item = req.body.item;
     fetchUserByToken(req).then(async(user) => {
-        User.fetchOne({ name: user.name }).then(async(user) => {
-            Partenaire.fetchOne({ name: _partenaire }).then(async(partenaire) => {
+        User.findOne({ name: user.name }).then(async(user) => {
+            Partenaire.findOne({ name: _partenaire }).then(async(partenaire) => {
                 let data = {
                     partenaire: partenaire._id,
                     quantite: _quantite,
@@ -62,7 +62,7 @@ router.delete('/:id', (req, res) => {
     const stockId = req.params.id;
     fetchUserByToken(req).then(async(user) => {
         let stock = await Stock.findOne({ _id: stockId }).exec();
-        if (stock.asso = user._id) {
+        if (stock.asso === user._id) {
             await Stock.deleteOne({ _id: stockId }).exec();
             res.status(200).send();
         } else {
