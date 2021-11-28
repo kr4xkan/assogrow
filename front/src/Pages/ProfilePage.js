@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../assets/Sidebar.css";
+import AuthContext from "../AuthContext";
 
 const ProfilePage = () => {
+  let context = useContext(AuthContext);
   return (
     <div id="profile">
-		<h1>PROFILE PAGE</h1>
+      <h3 class="title"> Page de profil de {context.name} </h3>
+      <p class="text">Votre email: {context.email} </p>
     </div>
   );
 };
