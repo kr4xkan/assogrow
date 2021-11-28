@@ -20,8 +20,8 @@ function App() {
       <Route path="/s" element={<StocksPage />} />
       <Route path="login" element={<LoginPage />} />
 
-      <Route exact path='/dashboard' element={<PrivateRoute/>}>
-        <Route exact path='/dashboard' element={<DashboardPage/>}/>
+      <Route path='/dashboard' element={<PrivateRoute/>}>
+        <Route path='/dashboard' element={<DashboardPage/>}/>
       </Route>
     </Routes>
   );

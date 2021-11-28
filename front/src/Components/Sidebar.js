@@ -1,13 +1,13 @@
 import React from "react";
 import "../assets/Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ setpage }) => {
   return (
-    <div id="sidebar">
+    <div className="sidebar">
       <ul>
-        <li>DOSSIERS</li>
-        <li>PARTENAIRES</li>
-        <li>STOCK</li>
+        <li onClick={() => setpage(1)}>DOSSIERS</li>
+        <li onClick={() => setpage(2)}>PARTENAIRES</li>
+        <li onClick={() => setpage(3)}>STOCK</li>
       </ul>
     </div>
   );

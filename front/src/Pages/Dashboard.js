@@ -12,29 +12,33 @@ import ProfilePage from './ProfilePage';
 import StocksPage from './Stocks';
 
 const DashboardPage = () => {
-  const [dossiers, setDossiers] = useState([]);
+  /**
+   * 0 - profile
+   * 1 - dossier
+   * 2 - partenaire
+   * 3 - stock
+   */
+  const [page, setpage] = useState(0);
 
-  useEffect(() => {
-		const token = localStorage.getItem('token');
-    axios.get(config.api_url + '/dossier/all', {
-      headers: {
-        'Authorization': 'Bearer ' + token
-      }
-    }).then(res => {
-      setDossiers(res.data);
-    }).catch(err => console.error(err));
-  }, [])
+  function getPage() {
+    switch (page) {
+      case 1:
+        return (<DossierPage />);
+      case 2:
+        return (<PartnerPage />);
+      case 3:
+        return (<StocksPage />);
+    
+      default:
+        return (<ProfilePage />);
+    }
+  }
 
   return (
     <div className="dashboard">
-      <Routes>
-        <Route path="/" element={<ProfilePage />} />
-        <Route path="/dossiers" element={<DossierPage />} />
-        <Route path="/partenaires" element={<PartnerPage />} />
-        <Route path="/stock" element={<StocksPage />} />
-      </Routes>
+      {getPage()}
       
-      <Sidebar />
+      <Sidebar setpage={setpage}/>
     </div>
   );
 };
