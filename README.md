@@ -6,7 +6,7 @@ Projet réalisé dans le cadre du GottaGoHack #1, dans les locaux d'Epita Lyon, 
 - Hugo Jug: 20h de sommeil
 - Matthieu: 12h de sommeil
 - Hugo Krax: 7h de sommeil
-- Mathis: 1h30 de sommeil
+- Mathis: 2h30 de sommeil
 
 👁️👄👁️
 
