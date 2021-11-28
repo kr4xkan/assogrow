@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/SearchItem.css';
 
-const DossierItem = ({ data }) => {
+const DossierItem = ({ data, onClick }) => {
 
 	let status = "NON TRAITE";
 	if (data.status === 1) {
@@ -10,7 +10,7 @@ const DossierItem = ({ data }) => {
 		status = "ACCEPTE";
 	}
 	return (
-		<div className="item dossier">
+		<div className="item dossier" onClick={onClick}>
 			<div>
 				<p className="surname">{data.nom} {data.prenom}</p>
 				<p className="phone">{data.telephone}</p>

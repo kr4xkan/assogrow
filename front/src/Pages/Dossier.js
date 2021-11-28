@@ -15,6 +15,8 @@ const DossierPage = () => {
 	const [prenom, setprenom] = useState("");
 	const [telephone, settelephone] = useState("");
 	const [file, setFile] = useState(null);
+	
+	const [modaldossier, setmodaldossier] = useState(null);
 
 	useEffect(() => {
 		const token = localStorage.getItem('token');
@@ -28,7 +30,6 @@ const DossierPage = () => {
 	}, [])
 
 	const refresh = () => {
-		console.log("yooo");
 		const token = localStorage.getItem('token');
 		axios.get(config.api_url + '/dossier/all', {
 			headers: {
@@ -72,6 +73,11 @@ const DossierPage = () => {
 			.catch((err) => console.error(err));
 	};
 
+	const clickHandler = (dossier) => {
+		console.log(dossier);
+		setmodaldossier(dossier);
+	};
+
 	return (
 		<React.Fragment>
 			<div className="container">
@@ -93,10 +99,10 @@ const DossierPage = () => {
 					<input className="send" type="submit" value="CREER" />
 				</form>
 				<div className="list">
-					<List data={dossiers} Component={DossierItem} />
+					<List data={dossiers} Component={DossierItem} onClickH={clickHandler} />
 				</div>
 			</div>
-			<ViewDossier dossier={{name: "test", pdf: "http://localhost:3000/uploads/1638035178353-42308.pdf"}} />
+			{modaldossier != null && <ViewDossier dossier={modaldossier} close={() => setmodaldossier(null)}/>}
 		</React.Fragment>
 	);
 };

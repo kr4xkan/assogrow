@@ -80,30 +80,30 @@ const StocksPage = () => {
           data={partenaires}
           value={partenaire}
           onChange={(e) => setpartner(e.target.value)}
-        />{" "}
+        />
         <div className="input">
-          <label htmlFor="item"> Offre </label>{" "}
+          <label htmlFor="item"> Offre </label>
           <input
             type="text"
             name="item"
             value={item}
             onChange={(e) => setitem(e.target.value)}
-          />{" "}
-        </div>{" "}
+          />
+        </div>
         <div className="input">
-          <label htmlFor="quantite"> Quantité </label>{" "}
+          <label htmlFor="quantite"> Quantité </label>
           <input
             type="text"
             name="quantite"
             value={quantite}
             onChange={(e) => setquantite(e.target.value)}
-          />{" "}
-        </div>{" "}
+          />
+        </div>
         <input className="send" type="submit" value="AJOUTER AU STOCK" />
-      </form>{" "}
+      </form>
       <div className="list">
-        <List data={stocks} Component={StockItem} />{" "}
-      </div>{" "}
+        <List data={stocks} Component={StockItem} />
+      </div>
     </div>
   );
 };

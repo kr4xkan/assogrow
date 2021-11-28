@@ -10,11 +10,30 @@
 	background-color: #000000a2;
 }
 
+.modaldos > .inner > button {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	border: none;
+	padding: 12px;
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 24px;
+}
+
+.modaldos > .inner > button:hover {
+	background-color: #ba2b2b;
+	color: white;
+}
+
 .modaldos > .inner {
+	position: relative;
 	background-color: white;
 	border-radius: 10px;
 	height: 80%;
 	width: 80%;
+	margin-left: 272px;
+	margin-right: 32px;
 	padding: 32px;
 }
 
