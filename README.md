@@ -13,7 +13,7 @@ Backend:
 ```
 cd back/
 
-docker compose up -d
+npm start
 ```
 
 Frontend:
