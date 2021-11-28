@@ -4,10 +4,13 @@ import "../assets/Accueil.css";
 import AutoComplete from "../Components/Autocomplete";
 import database from "../assets/csvjson.json";
 
+import image from "../assets/logo_hackathon.png";
+
 const AccueilPage = () => {
   return (
     <div class="AccueilContainer">
       <div class="header">
+        <img src={image} width="700"/>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 495">
           <path
             id="svg_1"
@@ -15,10 +18,6 @@ const AccueilPage = () => {
             fill="#97dc8a"
           />
         </svg>
-        <p class="bang"> ACHETEZ DES LEGUMES A VOTRE VOISIN </p>
-        <div class="inputcontainer">
-          <p> Recherchez un produit: </p> <AutoComplete data={database} />
-        </div>
         <Link class="login" to="/login">
           SE CONNECTER
         </Link>

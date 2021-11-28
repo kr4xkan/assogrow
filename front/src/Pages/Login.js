@@ -47,7 +47,7 @@ const LoginPage = () => {
   return (
     <div class="container">
       { toggle ? (
-        <div className="form">
+        <div className="form login">
           <div className="input">
             <label for="email">EMAIL</label>
             <input type="text" name="email" placeholder="jacque_houzit@ggh.fr" value={email} onChange={(e) => setemail(e.target.value)} />
