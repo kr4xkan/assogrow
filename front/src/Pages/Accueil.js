@@ -26,7 +26,7 @@ const AccueilPage = () => {
         <div>
           <h3> A propos de nous </h3>
           <p>
-            Nous étions 4... Nous sommes maintenant 2 developpeurs étudiants et avons décidé de créer AssoGrow. Nous savons ce qu'est la vie d'étudiants et combien elle peut être difficile pour ceux qui ont peu de moyens.
+            Nous sommes 4 développeurs étudiants et avons décidé de créer AssoGrow. Nous savons ce qu'est la vie d'étudiants et combien elle peut être difficile pour ceux qui ont peu de moyens.
             En discutant avec des membres d'une banque alimentaire, nous nous sommes dit qu'il pourrait leur être utile d'avoir une plateforme pour gérer la majorité de leurs actions.
             <br/>Via la plateforme AssoGrow, vous, les banques alimentaires, vous pourrez gérer les dossiers d'admission, gérer les partenaires avec qui vous échangez, mais aussi
             gérer les stocks de réductions, dons et promotions de vos partenaires.
