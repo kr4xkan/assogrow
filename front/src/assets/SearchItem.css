@@ -66,9 +66,13 @@
     font-size: 20px;
 }
 
-.dossier > div {
+.dossier > div > .status {
+    text-align: right;
+}
+
+.dossier > div, .partenaire > div {
     margin: 0;
     padding: 0 32px;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
 }

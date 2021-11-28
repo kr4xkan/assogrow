@@ -6,9 +6,9 @@ import AuthContext from "./AuthContext";
 import AccueilPage from './Pages/Accueil';
 import DashboardPage from './Pages/Dashboard';
 import DossierPage from "./Pages/Dossier";
-import ListPage from "./Pages/List";
 import LoginPage from './Pages/Login';
-import ResultPage from "./Pages/Result";
+import PartnerPage from "./Pages/Partner";
+import StocksPage from "./Pages/Stocks";
 
 function App() {
 
@@ -16,6 +16,8 @@ function App() {
     <Routes>
       <Route path="/" element={<AccueilPage />} />
       <Route path="/d" element={<DossierPage />} />
+      <Route path="/p" element={<PartnerPage />} />
+      <Route path="/s" element={<StocksPage />} />
       <Route path="login" element={<LoginPage />} />
 
       <Route exact path='/dashboard' element={<PrivateRoute/>}>

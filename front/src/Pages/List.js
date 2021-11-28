@@ -1,9 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import '../assets/List.css';
-import axios from "axios";
-
-import config from '../config';
-import AuthContext from '../AuthContext';
 
 const ListPage = ({ data, Component, title }) => {
 	return (
@@ -11,8 +7,8 @@ const ListPage = ({ data, Component, title }) => {
 			<h1>{title}</h1>
 			<div className="list">
 				{
-					data.map((d) => (
-						<Component data={d} />
+					[...data].reverse().map((d, i) => (
+						<Component key={i} data={d} />
 					))
 				}
 			</div>

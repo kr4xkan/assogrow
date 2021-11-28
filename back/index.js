@@ -14,6 +14,9 @@ const partenairesRoute = require('./routes/partenaires');
 const port = 3000;
 
 app.use(cors())
+
+app.use('/uploads', express.static('uploads'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

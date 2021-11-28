@@ -15,7 +15,7 @@ router.get('/all', async(req, res) => {
         return res.status(400).json({ error: errors.array() });
     }
     fetchUserByToken(req).then(async(doc) => {
-        let allStocks = await Stock.find({ asso: doc._id }).exec();
+        let allStocks = await Stock.find({ asso: doc._id }).populate('partenaire', 'name').exec();
         return res.status(200).json(allStocks);
     })
     .catch(err => res.status(401).json({ err }));
@@ -45,25 +45,20 @@ router.post('/add', [
     const _quantite = req.body.quantite;
     const _item = req.body.item;
     fetchUserByToken(req).then(async(user) => {
-        User.findOne({ name: user.name }).then(async(user) => {
-            Partenaire.findOne({ _id: _partenaire }).then(async(partenaire) => {
-                let data = {
-                    partenaire: partenaire._id,
-                    quantite: _quantite,
-                    asso: user._id,
-                    item: _item
-                };
-                let newStock = new Stock(data);
-                await newStock.save();
-                return res.status(200).json(data);
-            }).catch((err) => {
-                console.error(err);
-                return res.status(500).json({ err })
-            });
+        Partenaire.findOne({ _id: _partenaire }).then(async(partenaire) => {
+            let data = {
+                partenaire: partenaire._id,
+                quantite: _quantite,
+                asso: user._id,
+                item: _item
+            };
+            let newStock = new Stock(data);
+            await newStock.save();
+            return res.status(200).json(data);
         }).catch((err) => {
             console.error(err);
             return res.status(500).json({ err })
-        })
+        });
     }).catch((err) => {
         res.status(401).json({ success: false, errors: err })
     })

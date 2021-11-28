@@ -1,0 +1,56 @@
+.modaldos {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #000000a2;
+}
+
+.modaldos > .inner {
+	background-color: white;
+	border-radius: 10px;
+	height: 80%;
+	width: 80%;
+	padding: 32px;
+}
+
+.modaldos > .inner > h1 {
+	margin: 0;
+}
+
+.modaldos > .inner > iframe {
+	margin: 32px 0;
+	width: 100%;
+	height: 70%;
+}
+
+.modaldos > .inner > div {
+	display: flex;
+	justify-content: space-between;
+}
+
+.modaldos > .inner > div > button {
+    border: none;
+    height: 48px;
+    width: 45%;
+    background-color: #222;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 #b6b6b6;
+    transition: all 0.1s;
+}
+
+.modaldos > .inner > div > button:first-of-type:hover {
+	background-color: rgb(91, 130, 85);
+	color: white;
+}
+
+.modaldos > .inner > div > button:last-of-type:hover {
+    background-color: rgb(159, 83, 83);
+    color: white;
+}

@@ -14,11 +14,15 @@
     margin-bottom: 32px;
 }
 
+.formpart > .input {
+    width: 45%;
+}
+
 .formdos > .input > label {
     font-weight: bold;
 }
 
-.formdos > .input > input {
+.formdos > .input > input, .formdos > .input > select {
     border: none;
     padding: 16px 24px;
     background-color: #eee;
@@ -39,9 +43,20 @@
     transition: all 0.1s;
 }
 
+.formpart > input {
+    width: 100%;
+}
+
 .formdos > label {
+    padding: 0 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     padding-top: 12px;
     text-align: center;
+}
+
+.formdos > label.valid {
+    background-color: rgb(70, 142, 70);
 }
 
 .formdos > #upload {
