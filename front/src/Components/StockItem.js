@@ -6,7 +6,7 @@ const StockItem = ({ data }) => {
 		<div className="item stock">
 			<div>
 				<p className="surname">{data.item}</p>
-				<p className="desc">{"data.partenaire.name"}</p>
+				<p className="desc">{data.partenaire.name}</p>
 				<p className="phone">{data.quantite}</p>
 			</div>
 		</div>
