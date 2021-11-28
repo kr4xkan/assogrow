@@ -68,3 +68,7 @@
     background-color: white;
     color: #222;
 }
+
+.formstock > .send {
+    width: 100%;
+}

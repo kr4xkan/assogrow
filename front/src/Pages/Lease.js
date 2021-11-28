@@ -103,7 +103,7 @@ const LeasePage = () => {
             onChange={(e) => setdate(e.target.value)}
           />
         </div>
-        <input className="send" type="submit" value="AJOUTER AU STOCK" />
+        <input className="send" type="submit" value="ATTRIBUER" />
       </form>
       <div className="list">
         <List data={lease} Component={LeaseItem} />
