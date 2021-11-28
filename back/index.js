@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 connect();
 
 function listen() {
-    app.listen(port, () => {
+    app.listen("0.0.0.0", port, () => {
         console.log(`HACKATON RUNNING ON http://localhost:${port}`);
     })
 }
