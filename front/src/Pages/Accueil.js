@@ -35,7 +35,7 @@ const AccueilPage = () => {
         <div>
           <h3> Un abonnement intéressant </h3>
           <p>
-            Notre plateforme ne peut, malheureusement, vous être dispensée gratuitement, en raison des coûts des infrastructures. Cependant, nous faisons tout notre possible pour maintenir le tarif de l'abonnements au plus bas.
+            Notre plateforme vous est proposée à un tarif très compétitif, comparée à d'autres CRM.
           </p>
         </div>
       </div>
