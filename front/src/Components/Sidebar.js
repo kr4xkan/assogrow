@@ -1,14 +1,14 @@
 import React from "react";
 import "../assets/Sidebar.css";
 
-const Sidebar = ({ setpage }) => {
+const Sidebar = ({ setpage, active }) => {
   return (
     <div className="sidebar">
       <ul>
-        <li onClick={() => setpage(1)}>DOSSIERS</li>
-        <li onClick={() => setpage(2)}>PARTENAIRES</li>
-        <li onClick={() => setpage(3)}>STOCK</li>
-        <li onClick={() => setpage(4)}>ATTRIBUTION</li>
+        <li className={(active === 1) && "active"} onClick={() => setpage(1)}>DOSSIERS</li>
+        <li className={(active === 2) && "active"} onClick={() => setpage(2)}>PARTENAIRES</li>
+        <li className={(active === 3) && "active"} onClick={() => setpage(3)}>STOCK</li>
+        <li className={(active === 4) && "active"} onClick={() => setpage(4)}>ATTRIBUTION</li>
       </ul>
     </div>
   );

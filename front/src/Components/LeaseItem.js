@@ -5,9 +5,9 @@ const StockItem = ({ data }) => {
 	return (
 		<div className="item stock">
 			<div>
-				<p className="surname">{data.item}</p>
-				<p className="desc">{"data.partenaire.name"}</p>
-				<p className="phone">{data.quantite}</p>
+				<p className="surname">{data.dossier.nom}</p>
+				<p className="desc">Baguette</p>
+				<p className="phone">{data.date}</p>
 			</div>
 		</div>
 	);

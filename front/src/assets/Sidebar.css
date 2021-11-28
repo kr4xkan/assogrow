@@ -33,6 +33,10 @@
     transition: all 0.2s;
 }
 
+.sidebar > ul > li.active {
+    background-color: #9ce391;
+}
+
 .sidebar > ul > li:hover {
     cursor: pointer;
     background-color: #ccc;

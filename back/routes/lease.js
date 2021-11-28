@@ -14,7 +14,7 @@ router.get('/all', async(req, res) => {
         return res.status(400).json({ error: errors.array() });
     }
     fetchUserByToken(req).then(async(doc) => {
-        let allLeases = await Lease.find({ asso: doc._id }).exec();
+        let allLeases = await Lease.find({ asso: doc._id }).populate('dossier').populate('item').exec();
         return res.status(200).json(allLeases);
     })
     .catch(err => res.status(401).json({ err }));

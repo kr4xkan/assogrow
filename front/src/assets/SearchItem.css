@@ -70,7 +70,7 @@
     text-align: right;
 }
 
-.dossier > div, .partenaire > div {
+.dossier > div, .partenaire > div, .stock > div {
     margin: 0;
     padding: 0 32px;
     width: 100%;

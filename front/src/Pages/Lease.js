@@ -5,7 +5,7 @@ import axios from "axios";
 import config from "../config";
 import List from "./List";
 import AutoComplete from "../Components/Autocomplete";
-import StockItem from "../Components/StockItem";
+import LeaseItem from "../Components/LeaseItem";
 
 const LeasePage = () => {
   const [lease, setlease] = useState([]);
@@ -106,7 +106,7 @@ const LeasePage = () => {
         <input className="send" type="submit" value="AJOUTER AU STOCK" />
       </form>
       <div className="list">
-        <List data={lease} Component={StockItem} />
+        <List data={lease} Component={LeaseItem} />
       </div>
     </div>
   );

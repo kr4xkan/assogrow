@@ -14,7 +14,7 @@ const DashboardPage = () => {
    * 2 - partenaire
    * 3 - stock
    */
-  const [page, setpage] = useState(0);
+  const [page, setpage] = useState(1);
 
   function getPage() {
     switch (page) {
@@ -28,7 +28,7 @@ const DashboardPage = () => {
         return (<LeasePage />);
     
       default:
-        return (<ProfilePage />);
+        return (<DossierPage />);
     }
   }
 
@@ -36,7 +36,7 @@ const DashboardPage = () => {
     <div className="dashboard">
       {getPage()}
       
-      <Sidebar setpage={setpage}/>
+      <Sidebar setpage={setpage} active={page}/>
     </div>
   );
 };
