@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  mongodb_container:
+  hackadb:
     image: mongo:latest
     environment:
       MONGO_INITDB_ROOT_USERNAME: hackuser
@@ -10,6 +10,11 @@ services:
       - 27017:27017
     volumes:
       - mongodb_data_container:/data/db
+    networks:
+      - hackanet
+
+networks:
+  hackanet:
 
 volumes:
   mongodb_data_container:
