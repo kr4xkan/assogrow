@@ -4,7 +4,6 @@ const AutoComplete = ({ data, onChange, value }) => {
       <label htmlFor="nom">Partenaire</label>
       <select id="partner" value={value} onChange={onChange}>
         {data.map((suggestion, index) => {
-          console.log(suggestion);
           return (
             <option
               value={suggestion._id}
