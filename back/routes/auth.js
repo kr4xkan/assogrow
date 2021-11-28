@@ -84,18 +84,4 @@ router.post('/login', [
     })
 })
 
-router.post('/test', async (req, res) => {
-	res.json(req.body);
-});
-
-router.delete('/test', async (req, res) => {
-	await User.deleteOne({email: req.body.email});
-	res.status(200).send();
-});
-
-router.get('/test', async (_, res) => {
-	const users = await User.find({}).exec();
-	res.json(users);
-});
-
 module.exports = router;
