@@ -8,6 +8,7 @@ const Sidebar = ({ setpage }) => {
         <li onClick={() => setpage(1)}>DOSSIERS</li>
         <li onClick={() => setpage(2)}>PARTENAIRES</li>
         <li onClick={() => setpage(3)}>STOCK</li>
+        <li onClick={() => setpage(4)}>ATTRIBUTION</li>
       </ul>
     </div>
   );

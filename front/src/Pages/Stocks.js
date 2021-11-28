@@ -77,6 +77,7 @@ const StocksPage = () => {
     <div className="container">
       <form className="formdos formstock" onSubmit={create}>
         <AutoComplete
+          title="Partenaire"
           data={partenaires}
           value={partenaire}
           onChange={(e) => setpartner(e.target.value)}

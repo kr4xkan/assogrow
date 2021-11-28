@@ -10,6 +10,7 @@ const productRoute = require('./routes/products');
 const dossierRoute = require('./routes/dossier');
 const stocksRoute = require('./routes/stocks');
 const partenairesRoute = require('./routes/partenaires');
+const leaseRoute = require('./routes/lease');
 
 const port = 3000;
 
@@ -25,6 +26,7 @@ app.use('/product', productRoute);
 app.use('/dossier', dossierRoute);
 app.use('/stocks', stocksRoute);
 app.use('/partenaires', partenairesRoute);
+app.use('/lease', leaseRoute);
 
 app.get('/', (req, res) => {
     res.send('HACKATON');

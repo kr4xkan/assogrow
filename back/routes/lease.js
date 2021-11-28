@@ -23,7 +23,7 @@ router.get('/all', async(req, res) => {
 router.post('/add', [
     body('dossier').exists().isString(),
     body('item').exists().isString(),
-    body('date').exists().isDate(),
+    body('date').exists().isString()
 ], async(req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

@@ -1,12 +1,8 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Routes, Route } from "react-router-dom";
+import React, { useState } from 'react';
 import '../assets/Dashboard.css';
-import DossierItem from '../Components/DossierItem';
 import Sidebar from '../Components/Sidebar';
-import config from '../config';
 import DossierPage from './Dossier';
-import ListPage from './List';
+import LeasePage from './Lease';
 import PartnerPage from './Partner';
 import ProfilePage from './ProfilePage';
 import StocksPage from './Stocks';
@@ -28,6 +24,8 @@ const DashboardPage = () => {
         return (<PartnerPage />);
       case 3:
         return (<StocksPage />);
+      case 4:
+        return (<LeasePage />);
     
       default:
         return (<ProfilePage />);

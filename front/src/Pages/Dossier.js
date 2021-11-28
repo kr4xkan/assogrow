@@ -102,7 +102,7 @@ const DossierPage = () => {
 					<List data={dossiers} Component={DossierItem} onClickH={clickHandler} />
 				</div>
 			</div>
-			{modaldossier != null && <ViewDossier dossier={modaldossier} close={() => setmodaldossier(null)}/>}
+			{modaldossier != null && <ViewDossier dossier={modaldossier} close={() => {setmodaldossier(null); refresh()}}/>}
 		</React.Fragment>
 	);
 };

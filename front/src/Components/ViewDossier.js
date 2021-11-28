@@ -1,8 +1,22 @@
 import "../assets/ViewDossier.css";
-import { Document } from "react-pdf";
 import config from "../config";
+import axios from "axios";
 
 const ViewDossier = ({ dossier, close }) => {
+
+	function mark(st) {
+		const token = localStorage.getItem('token');
+		axios.put(config.api_url + '/dossier/mark', {
+			status: st,
+			id: dossier._id
+		}, {
+			headers: {
+				'Authorization': 'Bearer ' + token
+			}
+		}).then(() => {
+			close();
+		}).catch(err => console.error(err))
+	}
 
 	return (
 		<div className="modaldos">
@@ -12,8 +26,8 @@ const ViewDossier = ({ dossier, close }) => {
 				<iframe title="pdf" src={config.api_url + '/' + dossier.pdf} />
 
 				<div>
-					<button>ACCEPTER</button>
-					<button>REFUSER</button>
+					<button onClick={() => mark(2)}>ACCEPTER</button>
+					<button onClick={() => mark(1)}>REFUSER</button>
 				</div>
 
 				<button onClick={close}>X</button>

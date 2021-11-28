@@ -76,6 +76,34 @@ router.post('/new', [
 	})
 });
 
+router.put('/mark', [
+	body('id').exists().isString(),
+	body('status').exists().isNumeric()
+], async(req, res) => {
+	const errors = validationResult(req);
+	if (!errors.isEmpty()) {
+		return res.status(400).json({ error: errors.array() });
+	}
+	const _id = req.body.id;
+	const _status = req.body.status;
+
+	fetchUserByToken(req).then(async (user) => {
+		Dossier.findOne({ _id }).exec(async (err, dos) => {
+			if (err) {
+				return res.status(400).json({ error: err });
+			}
+
+			if (!dos.asso.equals(user._id))
+				return res.status(401).json({ success: false });
+			
+			dos.status = _status;
+			await dos.save();
+
+			res.status(200).json(dos);
+		});
+	});
+});
+
 router.get('/all', async(req, res) => {
     Dossier.find({}).populate('asso', 'username').exec((err, dos) => {
         if (err) {

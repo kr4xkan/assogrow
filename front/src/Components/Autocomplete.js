@@ -1,14 +1,14 @@
-const AutoComplete = ({ data, onChange, value }) => {
+const AutoComplete = ({ data, onChange, value, title }) => {
   return (
     <div className="input">
-      <label htmlFor="nom">Partenaire</label>
+      <label htmlFor="nom">{title}</label>
       <select id="partner" value={value} onChange={onChange}>
         {data.map((suggestion, index) => {
           return (
             <option
               value={suggestion._id}
               key={index}
-            >{suggestion.name}</option>
+            >{suggestion.name || suggestion.nom || suggestion.item}</option>
           );
         })}
         ;
